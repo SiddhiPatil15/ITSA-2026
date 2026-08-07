@@ -4,16 +4,27 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <link rel="shortcut icon" href="ITSAlogo.png" type="image/png">
-  <title>Technova — Events</title>
+  <title>Creativerse 2.0 — Events</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    /* Tricolor stripe at top */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(to right, #FF6B00 33.33%, #ffffff 33.33%, #ffffff 66.66%, #138808 66.66%);
+      z-index: 9999;
+    }
     /* || General and Base Styles */
     body {
       margin: 0;
       padding: 0;
       font-family: 'Cinzel', serif;
-      background-color: #0d0d0d;
+      background-color: #060d06;
       color: #f0f0f0;
       line-height: 1.6;
       overflow-x: hidden;
@@ -38,7 +49,7 @@
       color: #fff;
       text-transform: uppercase;
       font-weight: 900;
-      text-shadow: 0 0 8px #ff4d4d;
+      text-shadow: 0 0 8px #FF6B00, 0 0 20px #138808;
       text-align: center;
       padding-top: 50px;
       position: relative;
@@ -57,15 +68,13 @@
   position: fixed;
   width: 70%;
   top: 20px;
-  background: rgba(34, 0, 0, 0.592);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(6, 20, 6, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 107, 0, 0.35);
   z-index: 1000;
-
-  
-
+  box-shadow: 0 0 18px rgba(255,107,0,0.15), 0 0 18px rgba(19,136,8,0.10);
     }
 
 .navlogo {
@@ -94,7 +103,7 @@
 }
 
 .navlinks a:hover {
-  color: #ff4d4d;
+  color: #FF6B00;
 }
 
 .menu-toggle {
@@ -123,14 +132,16 @@
     
     .popup-content {
       position: relative;
-      background: #1a1a1a;
+      background: #0e1a0e;
       padding: 20px;
       border-radius: 10px;
       max-width: 500px;
       width: 90%;
       box-sizing: border-box;
       text-align: left;
-      box-shadow: 0 0 25px rgba(255, 77, 77, 0.6);
+      box-shadow: 0 0 25px rgba(255, 107, 0, 0.5), 0 0 15px rgba(19, 136, 8, 0.3);
+      border-top: 3px solid #FF6B00;
+      border-bottom: 3px solid #138808;
       animation: fadeIn 0.5s ease;
       overflow-y: auto;
       max-height: 90vh;
@@ -141,20 +152,20 @@
       to { opacity: 1; transform: scale(1); }
     }
     .popup h2 {
-      font-family: 'snas', serif;
-      color: #ff4d4d;
+      font-family: 'Cinzel', serif;
+      color: #FF6B00;
       margin-bottom: 15px;
       font-size: 1.5rem;
     }
     .popup p {
-      color: #ccc;
+      color: #ddd;
       margin-bottom: 20px;
       font-size: 0.95rem;
-      white-space: pre-line; 
-      line-height: 1;
+      white-space: pre-line;
+      line-height: 1.8;
     }  
     .popup button {
-      background: #ff4d4d;
+      background: linear-gradient(135deg, #FF6B00, #138808);
       border: none;
       padding: 8px 15px;
       border-radius: 6px;
@@ -166,7 +177,8 @@
       flex: 1 1 auto;
     }
     .popup button:hover {
-      background: #cc0000;
+      background: linear-gradient(135deg, #138808, #FF6B00);
+      transform: scale(1.03);
     }
     .close-btn {
       position: absolute;
@@ -185,14 +197,14 @@
       width: 200px;
       height: 200px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 77, 77, 0.3) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(255, 107, 0, 0.35) 0%, transparent 70%);
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       pointer-events: none;
       z-index: 0;
       filter: blur(60px);
-      opacity: 0.7;
+      opacity: 0.8;
     }
 
     /* || Hero Section */
@@ -215,7 +227,7 @@
       margin-bottom: 40px;
       position: relative;
       z-index: 1;
-      height: 100vh;
+      height: 55vh;
       overflow-x: hidden;
     }
     #background-video {
@@ -226,25 +238,28 @@
       min-height: 100%;
       z-index: -1;
       object-fit: cover;
+      filter: brightness(0.25) hue-rotate(100deg) saturate(1.5);
     }
     .events-hero h1 {
-      font-size: clamp(2.5rem, 12vw, 170px);
+      font-size: clamp(2.5rem, 10vw, 120px);
       margin-bottom: 10px;
-      color: #fff;
+      background: linear-gradient(180deg, #FF6B00 0%, #ffffff 50%, #138808 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       text-transform: uppercase;
       font-weight: 900;
-      text-shadow: 0 0 8px #ff4d4d;
-      animation: flicker 4s infinite;
+      animation: tricolorPulse 3s ease-in-out infinite;
     }
-    @keyframes flicker {
-      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; text-shadow: 0 0 8px #ff4d4d, 0 0 15px #ff1a1a; }
-      20%, 24%, 55% { opacity: 0.7; text-shadow: none; }
+    @keyframes tricolorPulse {
+      0%, 100% { filter: drop-shadow(0 0 10px rgba(255,107,0,0.8)); }
+      50% { filter: drop-shadow(0 0 18px rgba(19,136,8,0.9)); }
     }
     .events-hero p {
       max-width: 700px;
       margin: 0 auto;
       color: #ccc;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
     }
 
     /* || Current Events Grid */
@@ -260,9 +275,12 @@
       justify-items: center;
     }
     .card {
-      backdrop-filter: blur(5px);
-      border: 1px solid #333;
-      border-radius: 10px;
+      backdrop-filter: blur(8px);
+      background: rgba(10, 20, 10, 0.6);
+      border: 1px solid rgba(255, 107, 0, 0.3);
+      border-top: 2px solid #FF6B00;
+      border-bottom: 2px solid #138808;
+      border-radius: 12px;
       padding: 20px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
       transform: translateY(30px);
@@ -273,24 +291,27 @@
     }
     .card:hover {
       transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 10px 25px rgba(255, 77, 77, 0.5);
+      box-shadow: 0 10px 30px rgba(255, 107, 0, 0.4), 0 10px 30px rgba(19, 136, 8, 0.3);
     }
     .card h3 {
       font-family: 'Cinzel', serif;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       margin-bottom: 8px;
-      color: #ff4d4d;
+      background: linear-gradient(135deg, #FF6B00, #138808);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     .card p {
       font-size: 0.95rem;
-      color: #ccc;
+      color: #bbb;
       flex-grow: 1;
     }
     .tag {
       display: inline-block;
       font-size: 0.75rem;
       color: #fff;
-      background-color: #ff4d4d;
+      background: linear-gradient(135deg, #FF6B00, #138808);
       padding: 4px 8px;
       border-radius: 5px;
       margin-bottom: 10px;
@@ -306,15 +327,16 @@
       padding: 8px 12px;
       font-size: 0.9rem;
       color: #fff;
-      background-color: #ff4d4d;
+      background: linear-gradient(135deg, #FF6B00, #138808);
       border: none;
       border-radius: 6px;
       cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
+      transition: all 0.3s ease;
     }
     .btn:hover {
-      background-color: #cc0000;
+      background: linear-gradient(135deg, #138808, #FF6B00);
       transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(255,107,0,0.4);
     }
 
     /* || Past Events Section */
@@ -573,7 +595,7 @@
 
   
   <a href="index.html#event" class="dropbtn ">EVENTS</a>
-  <a href="#" class="active">TECHNOVA</a>
+  <a href="#" class="active">CREATIVERSE 2.0</a>
   
 
 
@@ -599,43 +621,38 @@
           <source src="horror.mp4" type="video/mp4">
           <source src="horror.webm" type="video/webm">
         </video>
-        <h1 id="bigh1 bigsap">Technova</h1>
-        <p>Step into the eerie world of technology and mystery — four thrilling events await: two technical challenges and two non-technical adventures.</p>
+        <h1 id="bigh1 bigsap">Creativerse 2.0</h1>
+        <p>Step into the world of creativity and technology — thrilling events await combining technical challenges and artistic adventures.</p>
       </section>
       <section class="grid">
         <div class="card">
           <div>
-            <!-- <span class="tag">Technical</span> -->
-            <h3>Escape the Dark Web</h3>
-            <p>Dive into the Dark Web, where every step hides a trap.
-               Crack codes, dodge phishing, and outsmart ghostly ciphers.
-              Escape the firewall before the shadows consume you.</p>
+            <h3>PromptWar – AI Website Creation</h3>
+            <p>Put your creativity and AI skills to the test — craft the perfect prompt, build a website, and let your imagination battle it out!</p>
           </div>
           <div class="buttons">
             <button class="btn" onclick="location.href='https://forms.gle/N1hfPcygwL6jXHjo6'">Register</button>
-            <button class="btn rule-btn" data-event="Escape the Dark Web">Rules</button>
+            <button class="btn rule-btn" data-event="PromptWar – AI Website Creation">Rules</button>
           </div>
         </div>
         <div class="card">
           <div>
-            <!-- <span class="tag">Non-Technical</span> -->
-            <h3>BGMI</h3>
-            <p>A battleground where teamwork,strategy,reflexes decides whether you win or get wiped out. </p>
+            <h3>Poster Making Competition</h3>
+            <p>Express your creativity on paper — design a poster that speaks volumes. Bring your art supplies and let your imagination shine!</p>
           </div>
           <div class="buttons">
             <button class="btn" onclick="location.href='https://forms.gle/CvBWacNwtdVophEU6'">Register</button>
-            <button class="btn rule-btn" data-event="BGMI">Rules</button>
+            <button class="btn rule-btn" data-event="Poster Making Competition">Rules</button>
           </div>
         </div>
         <div class="card">
           <div>
-            <!-- <span class="tag">Non-Technical</span> -->
-            <h3>E-FOOTBALL</h3>
-            <p>Dribble, pass, and conquer the pitch — every move counts in the ultimate digital showdown.</p>
+            <h3>CSS BATTLE</h3>
+            <p>Recreate pixel-perfect targets using only HTML and CSS. No JavaScript allowed — just your styling skills and creativity!</p>
           </div>
           <div class="buttons">
             <button class="btn" onclick="location.href='https://forms.gle/DGaJB2co4Yi2KgEH8'">Register</button>
-            <button class="btn rule-btn" data-event="E-FOOTBALL">Rules</button>
+            <button class="btn rule-btn" data-event="CSS BATTLE">Rules</button>
           </div>
         </div>
       </section>
@@ -716,58 +733,18 @@ document.addEventListener('click', (e) => {
     const popupTitle = document.getElementById("popup-title");
     const popupText = document.getElementById("popup-text");
     const rules = {
-      "Escape the Dark Web": `General Game Rules:\n 
-      1. 6 teams (2 members each). Time is tracked per team.\n
+      "PromptWar – AI Website Creation": `• Participation is strictly in teams of two (Duo).\n• Entry fee is ₹100 per team.\n• Mobile phones or any external devices are not permitted for prompt generation.\n• Every team must write their original prompt on the sheet provided by the organizers.\n• The prompt entered into the AI tool must exactly match the written prompt.\n• Any copied prompt, plagiarism, or mismatch between the written and AI prompt will result in disqualification.\n• Teams must complete and submit their website within the allotted time.\n• Only the submitted website will be evaluated.\n• The decision of the judges will be final and binding.`,
 
-2.Fastest/correct teams advance after each stage.\n
+      "Poster Making Competition": `• Individual (Solo) participation only.\n• Entry fee is ₹50 per participant.\n• One drawing sheet will be provided by the organizers.\n• Participants must bring their own drawing and colouring materials.\n• Posters must be created only during the competition.\n• Mobile phones, printed references, or copied artwork are not allowed.\n• The artwork must be original and relevant to the theme.\n• The decision of the judges will be final and binding.`,
 
-3.No external devices or help — only your knowledge.\n
-Explanation of each stage :\n
-Stage 1 – Phishing Trap\n
-Spot fake emails hidden in your inbox before they trap you.\n
-
-Stage 2 – Malware Cipher\n
-A secret word has been locked in a strange puzzle. Crack the code before others — or be left in the dark.\n
-
-Stage 3 – Ghost Binary\n
-The paper hides secrets under the light — glowing symbols and ghostly hints.
-Decode them quickly to uncover the lost tech word.\n
-
-Stage 4 – Firewall Maze\n
-Navigate the maze of blocked paths — shout ESCAPE if you survive!\n
-`,
-
-      "BGMI": ` 1.Committee decisions are final.\n
-
-2.Abusive language will lead to disqualification.\n
-
-3.Participants must wear ID cards at all times.\n
-
-4.Hacking is not allowed, and sliding must be turned off.\n
-
-5.Both teams must agree on a gun; default is M416.\n
-
-6.If network issues occur, the game will be paused.\n
-
-7.Knockout format – winners progress to the next round.`,
-
-// efootball rules
-      "E-FOOTBALL":  `1. Format: 1v1 | Dream Team squads allowed\n
-2. Match Time: 10 minutes per match (until Quarter Finals), 15 minutes per match (Semi Final & Final)\n
-3. Knockout: Lose = Out, Win = Advance\n
-4. Finals: Best of 3 matches\n
-5. Fair Play: No glitches, bugs, or toxic behavior. Pause only for substitutions/settings\n
-6. Connection: Disconnection under 5 minutes = Restart; After 5 minutes → continue with score/time\n
-7. Walkover: Team late by 10 or more minutes = Forfeit\n
-8. Proof: Screenshot of final score is compulsory\n
-9. Decisions: Organizer’s decision is final`
+      "CSS BATTLE": `• Only HTML and CSS are permitted.\n• Use of JavaScript is strictly prohibited.\n• External CSS libraries and frameworks (Bootstrap, Tailwind, etc.) are not allowed.\n• Participants must submit all required project files before the deadline.\n• Internet usage may be restricted during the competition.\n• The decision of the judges will be final and binding.`
     };
 
 
 const registerLinks = {
-  "Escape the Dark Web": "https://forms.gle/N1hfPcygwL6jXHjo6",
-  "BGMI": "https://forms.gle/CvBWacNwtdVophEU6",
-  "E-FOOTBALL": "https://forms.gle/DGaJB2co4Yi2KgEH8"
+  "PromptWar – AI Website Creation": "https://forms.gle/N1hfPcygwL6jXHjo6",
+  "Poster Making Competition": "https://forms.gle/CvBWacNwtdVophEU6",
+  "CSS BATTLE": "https://forms.gle/DGaJB2co4Yi2KgEH8"
 };
    document.querySelectorAll(".rule-btn").forEach(btn => {
   btn.addEventListener("click", () => {
