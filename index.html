@@ -1,287 +1,406 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITSA</title>
-    <link rel="shortcut icon" href="ITSAlogo.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITSA — Information Technology Students' Association</title>
+  <link rel="shortcut icon" href="ITSAlogo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Sora:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+  <!-- Modular Independence Day Seasonal Decoration Layer Overlay -->
+  <div id="independence-day-decor" class="independence-day-decor-overlay" aria-hidden="true">
+    <!-- Top Marigold Toran / Garland (FestivalAssets/image3.png) -->
+    <img src="FestivalAssets/image3.png" alt="" class="decor-toran-header">
 
+    <!-- Top Left Festoon Flags (FestivalAssets/image6.png) -->
+    <img src="FestivalAssets/image6.png" alt="" class="decor-festoon-corner">
 
-    <!-- Home Section -->
-<div class="homeSection sections"  id="home">
-
-<!-- Navbar -->
-<div class="navbar">
-  <div class="navlogo"></div>
-
-  <!-- Hamburger Icon -->
-  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-
-  <!--  Nav Links -->
-  <div class="navlinks" id="navlinks">
-    <a href="#home" class="navl">HOME</a>
-    <a href="#about" class="navl">ABOUT</a>
-    <a href="#team" class="navl">TEAM</a>
-
-
- 
-  <a href="#event" class="navl">EVENTS</a>
-   <a href="event.html" class="navl">CREATIVERSE 2.0</a>
-    
-    <a href="#contact" class="navl cont">CONTACT</a>
+    <!-- Cybernetic Tech Grid Overlay -->
+    <div class="tech-grid-bg"></div>
   </div>
-</div>
 
-
-
-
-<!-- home content -->
-<div class="homeContent">
-<div class="homeH1">ITSA – Innovate.<span>Connect</span>. Lead.</div>
-
-<p class="homeParagraph">
-    We are the Information Technology Students’ Association (ITSA) – a student-driven community that organizes tech events, cultural activities, and leadership programs to help students learn, grow, and connect.
-</p>
-<div class="buttons"><button class="homeButton" onClick="location.href='event.html'">Explore Events</button> <button class="transparent-btn" onclick="location.href='team.html'">View Team</button></div>
-
-</div>
-
-</div>
-
-
-
-<!-- About Section -->
-<section class="about-container sections" id="about">
-    <h1 class="about heading">About Us</h1>
-    <p class="about-subtitle">At ITSA, we take pride in our values – innovation, collaboration, and growth.</p>
-
-
-
-    <div class="content">
-      <div class="about-left">
-        <div class="point">
-          <div class="point-number  n-1">01.</div>
-          <h3>Who We Are</h3>
-          <p>A student body of IT enthusiasts driving innovation and teamwork.</p>
+  <!-- Sticky Glass Navbar -->
+  <div class="navbar-wrapper">
+    <div class="container">
+      <div class="navbar">
+        <div class="navbrand">
+          <div class="navlogo"></div>
+          <span class="brand-text">ITSA SJCEM</span>
         </div>
 
-        <div class="point">
-          <div class="point-number n-1">02.</div>
-          <h3>What We Do</h3>
-          <p>We organize workshops, hackathons, and seminars to boost skills.</p>
-        </div>
+        <!-- Hamburger Icon -->
+        <div class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">&#9776;</div>
 
-        <div class="point">
-          <div class="point-number  n-1">03.</div>
-          <h3>How We Help</h3>
-          <p>We provide platforms for collaboration, projects, and learning.</p>
-        </div>
-
-        <div class="point">
-          <div class="point-number  n-1">04.</div>
-          <h3>Create Success Story</h3>
-          <p>Through mentorship and opportunities, students turn ideas into impact.</p>
+        <!-- Nav Links -->
+        <div class="navlinks" id="navlinks">
+          <a href="#home" class="navl active">HOME</a>
+          <a href="#about" class="navl">ABOUT</a>
+          <a href="#team" class="navl">TEAM</a>
+          <a href="#event" class="navl">EVENTS</a>
+          <a href="event.html" class="navl">CREATIVERSE 2.0</a>
+          <a href="#contact" class="navl cont">CONTACT</a>
         </div>
       </div>
+    </div>
+  </div>
 
-      <div class="about-right">
-        <img src="team.JPG" alt="ITSA team" class="imag">
-        <img src="teamMeet.jpg" alt="teamMeet" class="imag">
-        <img src="students.jpg" alt="students" class="imag">
-    <img src="about4.JPG" alt="event"class="fourth imag">
+  <!-- Home Section with FestivalAssets/image7.png Background -->
+  <div class="homeSection sections" id="home">
+    <div class="hero-glow-bg"></div>
+    <div class="container">
+      <div class="hero-layout-grid">
+        <!-- Home Content -->
+        <div class="homeContent">
+          <div class="hero-badge">
+            <span class="badge-tag">IN</span>
+            <span>INDEPENDENCE DAY 2026 • Unity • Freedom • Pride</span>
+          </div>
+
+          <div class="homeH1">ITSA – <span class="txt-saffron">Innovate.</span> <span class="txt-white">Connect.</span> <span class="txt-green">Lead.</span></div>
+
+          <p class="homeParagraph">
+            We are the Information Technology Students’ Association (ITSA) – a student-driven technology community that organizes tech
+            events, cultural activities, and leadership programs to help students learn, grow, and connect.
+          </p>
+
+          <div class="buttons">
+            <button class="homeButton btn-saffron" onClick="location.href='event.html'">Explore Events &rarr;</button>
+            <button class="transparent-btn btn-navy" onclick="location.href='team.html'">View Team</button>
+          </div>
+        </div>
+
+        <!-- Hero Right Feature Flag Illustration (FestivalAssets/image9.png) -->
+        <div style="text-align: center;" class="hero-flag-wrapper">
+          <img src="FestivalAssets/image9.png" alt="Indian Flag Waving" class="asset-hero-flag-img">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Animated Tricolor Marquee Banner Ticker (SAFFRON -> WHITE -> GREEN) -->
+  <div class="tricolor-marquee-wrapper" aria-hidden="true">
+    <div class="tricolor-marquee-content">
+      <span>CONNECT. LEAD.</span>
+      <span class="dot">■</span>
+      <span>ITSA TECHNOLOGY COMMUNITY SJCEM</span>
+      <span class="dot">■</span>
+      <span>UNITY • FREEDOM • PRIDE</span>
+      <span class="dot">■</span>
+      <span>CREATIVERSE 2.0 FEST IS LIVE</span>
+      <span class="dot">■</span>
+      <span>IN CELEBRATING THE SPIRIT OF INDIA</span>
+      <span class="dot">■</span>
+    </div>
+    <div class="tricolor-marquee-content" aria-hidden="true">
+      <span>CONNECT. LEAD.</span>
+      <span class="dot">■</span>
+      <span>ITSA TECHNOLOGY COMMUNITY SJCEM</span>
+      <span class="dot">■</span>
+      <span>UNITY • FREEDOM • PRIDE</span>
+      <span class="dot">■</span>
+      <span>CREATIVERSE 2.0 FEST IS LIVE</span>
+      <span class="dot">■</span>
+      <span>IN CELEBRATING THE SPIRIT OF INDIA</span>
+      <span class="dot">■</span>
+    </div>
+  </div>
+
+  <!-- Gold Ornamental Border Divider (FestivalAssets/image2.png) -->
+  <div class="asset-gold-border-divider"></div>
+
+  <!-- Independence Day Special Card Section -->
+  <section class="indy-section" id="independence">
+    <div class="container">
+      <div class="indy-card">
+        <!-- Ashoka Chakra Watermark Emblem (FestivalAssets/image4.png) -->
+        <div class="asset-chakra-watermark"></div>
+
+        <span class="section-badge">
+          <span class="badge-dot"></span> Freedom &amp; Technology
+        </span>
+
+        <div style="text-align: center; margin-bottom: 16px;">
+          <!-- Tricolor Ribbon Banner (FestivalAssets/image5.png) -->
+          <img src="FestivalAssets/image5.png" alt="" class="asset-ribbon-emblem-banner">
+        </div>
+
+        <h2 class="indy-title">Celebrating Freedom. Inspiring Innovation.</h2>
+        <p class="indy-subtitle">
+          "Freedom gives us the courage to imagine. Innovation gives us the power to build."
+        </p>
+
+        <div class="indy-grid">
+          <div class="indy-box">
+            <div class="indy-box-icon">🚀</div>
+            <h3>Tech &amp; Nation Building</h3>
+            <p>Empowering students to solve real-world challenges through open-source software, AI models, and digital transformation.</p>
+          </div>
+          <div class="indy-box">
+            <div class="indy-box-icon">🤝</div>
+            <h3>Community &amp; Unity</h3>
+            <p>Bringing together diverse student talents across design, web code, media, and management under one collaborative banner.</p>
+          </div>
+          <div class="indy-box">
+            <div class="indy-box-icon">💡</div>
+            <h3>Creative Independence</h3>
+            <p>Fostering original technical thinking, hackathons, and fearless student leadership across every department.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- About Section -->
+  <section class="about-container sections" id="about">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="section-badge"><span class="badge-dot"></span> ABOUT ITSA</span>
+        <h1 class="about heading">About Us</h1>
+        <p class="about-subtitle">At ITSA, we take pride in our values – innovation, collaboration, and growth.</p>
+      </div>
 
-<!-- team section -->
-<div class="teamContainer sections"  id="team">
-<div class="teamHeading">
-    <h2 class="team-title">Meet Our Team</h2>
-    <p class="teamp">Our dedicated team members who make ITSA possible.</p>
-</div>
+      <div class="content">
+        <div class="about-left">
+          <div class="point">
+            <div class="point-number n-1">01.</div>
+            <h3>Who We Are</h3>
+            <p>A student body of IT enthusiasts driving innovation and teamwork.</p>
+          </div>
 
-<div class="circles">
+          <div class="point">
+            <div class="point-number n-1">02.</div>
+            <h3>What We Do</h3>
+            <p>We organize workshops, hackathons, and seminars to boost skills.</p>
+          </div>
 
-<div class="teamCircle">
-  <div class="teamIMG one"><img src="faculty.webp"></div>
-  <div class="teamText">
-    <h3 class="teamName">Mrs.Maya Patil</h3>
-    <button class="viewTeam" onClick="location.href='team.html#Faculty'">Faculty Co-ordinator</button>
+          <div class="point">
+            <div class="point-number n-1">03.</div>
+            <h3>How We Help</h3>
+            <p>We provide platforms for collaboration, projects, and learning.</p>
+          </div>
+
+          <div class="point">
+            <div class="point-number n-1">04.</div>
+            <h3>Create Success Story</h3>
+            <p>Through mentorship and opportunities, students turn ideas into impact.</p>
+          </div>
+        </div>
+
+        <div class="about-right">
+          <img src="team.JPG" alt="ITSA team" class="imag">
+          <img src="teamMeet.jpg" alt="teamMeet" class="imag">
+          <img src="students.jpg" alt="students" class="imag">
+          <img src="about4.JPG" alt="event" class="fourth imag">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gold Ornamental Border Divider (FestivalAssets/image2.png) -->
+  <div class="asset-gold-border-divider"></div>
+
+  <!-- Team Section -->
+  <div class="teamContainer sections" id="team">
+    <div class="container">
+      <div class="teamHeading" style="text-align: center;">
+        <span class="section-badge"><span class="badge-dot"></span> ITSA LEADERSHIP</span>
+        <h2 class="team-title">Meet Our Team</h2>
+        <p class="teamp">Our dedicated team members who make ITSA possible.</p>
+      </div>
+
+      <div class="circles">
+        <div class="teamCircle">
+          <div class="teamIMG one"><img src="faculty.webp" alt="Mrs. Maya Patil"></div>
+          <div class="teamText">
+            <h3 class="teamName">Mrs. Maya Patil</h3>
+            <button class="viewTeam btn-saffron" onClick="location.href='team.html#Faculty'">Faculty Co-ordinator</button>
+          </div>
+        </div>
+
+        <div class="teamCircle">
+          <div class="teamIMG"><img src="Core.webp" alt="Core Team"></div>
+          <div class="teamText">
+            <h3 class="teamName">Core Executive</h3>
+            <button class="viewTeam btn-green" onClick="location.href='team.html#Core'">Core Team</button>
+          </div>
+        </div>
+
+        <div class="teamCircle">
+          <div class="teamIMG"><img src="Technical.webp" alt="Technical Team"></div>
+          <div class="teamText">
+            <h3 class="teamName">Technical Domain</h3>
+            <button class="viewTeam btn-navy" onClick="location.href='team.html#Technical'">Technical Team</button>
+          </div>
+        </div>
+
+        <div class="teamCircle">
+          <div class="teamIMG"><img src="Media.webp" alt="Media Team"></div>
+          <div class="teamText">
+            <h3 class="teamName">Media &amp; Video</h3>
+            <button class="viewTeam btn-tricolor" onClick="location.href='team.html#Media'">Media Team</button>
+          </div>
+        </div>
+
+        <div class="teamCircle">
+          <div class="teamIMG"><img src="Design.webp" alt="Design Team"></div>
+          <div class="teamText">
+            <h3 class="teamName">UI/UX &amp; Design</h3>
+            <button class="viewTeam btn-saffron" onClick="location.href='team.html#Design'">Design Team</button>
+          </div>
+        </div>
+
+        <div class="teamCircle">
+          <div class="teamIMG"><img src="PR.webp" alt="PR Team"></div>
+          <div class="teamText">
+            <h3 class="teamName">Public Relations</h3>
+            <button class="viewTeam btn-green" onClick="location.href='team.html#PR'">Public Relation Team</button>
+          </div>
+        </div>
+
+        <div class="teamCircle">
+          <div class="teamIMG"><img src="event (1).webp" alt="Event Team"></div>
+          <div class="teamText">
+            <h3 class="teamName">Events &amp; Management</h3>
+            <button class="viewTeam btn-navy" onClick="location.href='team.html#Event'">Event Team</button>
+          </div>
+        </div>
+
+        <div class="teamCircle">
+          <div class="teamIMG"><img src="Document.webp" alt="Document Team"></div>
+          <div class="teamText">
+            <h3 class="teamName">Documentation</h3>
+            <button class="viewTeam btn-tricolor" onClick="location.href='team.html#Document'">Documentation Team</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 36px;">
+        <button id="eventButton" class="eventbtn btn-saffron" onClick="location.href='team.html'">Meet Full ITSA Team &rarr;</button>
+      </div>
+    </div>
   </div>
-</div>
-
-<div class="teamCircle">
-  <div class="teamIMG"><img src="Core.webp"></div>
-  <div class="teamText">
-    <h3 class="teamName">Members</h3>
-    <button class="viewTeam" onClick="location.href='team.html#Core'">Core Team</button>
-  </div>
-</div>
-
-
-<div class="teamCircle">
-  <div class="teamIMG"><img src="Technical.webp"></div>
-  <div class="teamText">
-    <h3 class="teamName">Members</h3>
-    <button class="viewTeam" onClick="location.href='team.html#Technical'">Technical Team</button>
-  </div>
-</div>
-
-<div class="teamCircle">
-  <div class="teamIMG"><img src="Media.webp"></div>
-  <div class="teamText">
-    <h3 class="teamName">Members</h3>
-    <button class="viewTeam" onClick="location.href='team.html#Media'">Media Team</button>
-  </div>
-</div>
-  
-  <div class="teamCircle">
-  <div class="teamIMG"><img src="Design.webp"></div>
-  <div class="teamText">
-    <h3 class="teamName">Members</h3>
-    <button class="viewTeam" onClick="location.href='team.html#Design'">Design Team</button>
-  </div>
-</div>
-
-<div class="teamCircle">
-  <div class="teamIMG"><img src="PR.webp"></div>
-  <div class="teamText">
-    <h3 class="teamName">Members</h3>
-    <button class="viewTeam" onClick="location.href='team.html#PR'">Public Relation Team</button>
-  </div>
-</div>
-
-<div class="teamCircle">
-  <div class="teamIMG"><img src="event (1).webp"></div>
-  <div class="teamText">
-    <h3 class="teamName">Members</h3>
-    <button class="viewTeam" onClick="location.href='team.html#Event'">Event Team</button>
-  </div>
-</div>
-
-
-<div class="teamCircle">
-  <div class="teamIMG"><img src="Document.webp"></div>
-  <div class="teamText">
-    <h3 class="teamName">Members</h3>
-    <button class="viewTeam" onClick="location.href='team.html#Document'">Documentation Team</button>
-  </div>
-</div>
-
-
-
-</div>
-
-
-
- <button  id="eventButton" class="eventbtn" onClick="location.href='team.html'">Meet out Team</button>
-
-
-
-
-</div>
-
-
-
-
-
 
   <!-- Event Section -->
-<div class="eventSection sections"  id="event">
-    <h2 class="heading headings">Events & Sessions</h2>
-    <p class="eventSubheading">Stay tuned for upcoming events and sessions!</p>
-
-
-<div class="cards" id="eventCards">
-    <div class="outerCard outerCard1">
-    <div class="info"><div class="n-1">01</div> 
-        <div class="f-1"> <div class="n-2">Peer to Peer Talk</div> 
-        <p class="eventParagraph"> A peer-to-peer session where a senior shared valuable tips and strategies for GATE preparation. </p>
-        </div>
-         </div>
-        <div class="f-3 xyz im1"></div>
-        </div>
-
-<div class="outerCard outerCard1">
-    <div class="info"><div class="n-1">02</div> 
-        <div class="f-1"> <div class="n-2">Alumni Talk</div> 
-        <p class="eventParagraph"> An alumni talk where a senior guided students about pursuing higher studies abroad.</p>
-        
-        </div>
-         </div>
-        <div class="f-3 xyz im2"></div>
-        </div>
-
-
-<div class="outerCard outerCard3">
-    <div class="info"><div class="n-1">03</div> 
-        <div class="f-1"> <div class="n-2">CreatiVerse 2k25</div> 
-        <p class="eventParagraph">An Independence Day celebration by ITSA,featuring games, gifts, and community events to honor 15 August</p>
-        </div>
-         </div>
-        <div class="f-3 xyz im3"></div>
-        </div>
-
-
-</div>
-
- <button id="eventButton" class="eventButton" onClick="location.href='event.html'">View more Events</button>
-    </div>
-
-
-
-<!-- Contact Section -->
-
-<div class="contact-container sections"  id="contact">
-    <h1 class="contact-title">Contact Us •</h1>
-    <div class="contact-content">
-      <div class="contact-text">
-        Where conversations turn into collaborations, and ideas into reality 
-        <span>— by ITSA.</span> 
+  <div class="eventSection sections" id="event">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="section-badge"><span class="badge-dot"></span> EVENTS &amp; HIGHLIGHTS</span>
+        <h2 class="heading headings">Events &amp; Sessions</h2>
+        <p class="eventSubheading">Stay tuned for upcoming events and sessions!</p>
       </div>
 
-      <div class="contact-info">
-        <p class="mail"><strong>Email:</strong> <a href="mailto:itsa@sjcem.edu.in">itsa@sjcem.edu.in</a></p>
-        <p><strong>Phone:</strong> <a href="tel:+919145499937">+91 9145499937</a></p>
-        
-        <hr style="margin: 15px 0; border: 1px solid #666b6b;">
+      <div class="cards" id="eventCards">
+        <div class="outerCard outerCard1">
+          <div class="info">
+            <div class="n-1">01</div>
+            <div class="f-1">
+              <div class="n-2">Peer to Peer Talk</div>
+              <p class="eventParagraph"> A peer-to-peer session where a senior shared valuable tips and strategies for
+                GATE preparation. </p>
+            </div>
+          </div>
+          <div class="f-3 xyz im1"></div>
+        </div>
 
-        <p><span style="color:#00e1ff; font-weight:bold;">Mumbai</span><br>
-          SJCEM <br>
-          Vevor, Manor Road <br>
-          Palghar (E) <br>
-          Dist. Palghar - 401404
-        </p>
+        <div class="outerCard outerCard1">
+          <div class="info">
+            <div class="n-1">02</div>
+            <div class="f-1">
+              <div class="n-2">Alumni Talk</div>
+              <p class="eventParagraph"> An alumni talk where a senior guided students about pursuing higher studies
+                abroad.</p>
+            </div>
+          </div>
+          <div class="f-3 xyz im2"></div>
+        </div>
 
-        <hr style="margin: 15px 0; border: 1px solid #666b6b;">
+        <div class="outerCard outerCard3" style="position: relative;">
+          <!-- Festival Balloon Cluster Accent (FestivalAssets/image8.png) -->
+          <img src="FestivalAssets/image8.png" alt="" class="asset-balloons-cluster">
 
-        <p><span style="color:#00e1ff; font-weight:bold;">Stalk Us</span><br>
-          <a href="https://www.instagram.com/itsa_sjcem?igsh=MW1jNnlnbm5oZXYwdg==">Instagram</a> <br>
-          <a href="https://www.linkedin.com/in/itsa-sjcem-57782b251/">LinkedIn</a>
-        </p>
+          <div class="info">
+            <div class="n-1">03</div>
+            <div class="f-1">
+              <div class="n-2">CreatiVerse 2k25</div>
+              <p class="eventParagraph">An Independence Day celebration by ITSA, featuring games, gifts, and community
+                events to honor 15 August.</p>
+            </div>
+          </div>
+          <div class="f-3 xyz im3"></div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 36px;">
+        <button id="eventButton" class="eventButton btn-saffron" onClick="location.href='event.html'">View More Creativerse Events &rarr;</button>
       </div>
     </div>
   </div>
 
-    <!-- Footer Section -->
+  <!-- Contact Section -->
+  <div class="contact-container sections" id="contact">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 24px;">
+        <span class="section-badge"><span class="badge-dot"></span> GET IN TOUCH</span>
+        <h1 class="contact-title" style="margin-bottom: 0;">Contact Us</h1>
+      </div>
 
+      <div class="contact-content">
+        <div class="contact-text">
+          Where conversations turn into collaborations, and ideas into reality
+          <span>— by ITSA SJCEM.</span>
+        </div>
+
+        <div class="contact-info">
+          <p class="mail"><strong>Email:</strong> <a href="mailto:itsa@sjcem.edu.in">itsa@sjcem.edu.in</a></p>
+          <p><strong>Phone:</strong> <a href="tel:+919145499937">+91 9145499937</a></p>
+
+          <hr style="margin: 12px 0; border: 1px solid rgba(255,255,255,0.15);">
+
+          <p><span style="color:#FF9933; font-weight:bold;">Campus Address</span><br>
+            SJCEM <br>
+            Vevoor, Manor Road <br>
+            Palghar (E) <br>
+            Dist. Palghar - 401404
+          </p>
+
+          <hr style="margin: 12px 0; border: 1px solid rgba(255,255,255,0.15);">
+
+          <p><span style="color:#38BDF8; font-weight:bold;">Connect With Us</span><br>
+            <a href="https://www.instagram.com/itsa_sjcem?igsh=MW1jNnlnbm5oZXYwdg==" target="_blank" style="margin-right: 15px;">Instagram</a>
+            <a href="https://www.linkedin.com/in/itsa-sjcem-57782b251/" target="_blank">LinkedIn</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pre-Footer Tricolor Ribbon Banner (FestivalAssets/image1.png) -->
+  <div class="pre-footer-ribbon-wrapper">
+    <img src="FestivalAssets/image1.png" alt="Tricolor Ribbon Wave" class="asset-pre-footer-ribbon">
+  </div>
+
+  <!-- Footer Section -->
   <footer>
-    <a href="#home" > © 2025 ITSA Committee | Made with ❤️ by <span>ITSA-SJCEM Students</span></a> 
-    
+    <div class="container footer-content">
+      <a href="#home"> © 2025 ITSA Committee | Made with ❤️ by <span>ITSA-SJCEM Students</span></a>
+    </div>
   </footer>
-   
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+    integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>

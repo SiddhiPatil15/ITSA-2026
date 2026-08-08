@@ -1,420 +1,142 @@
+/* ==========================================================================
+   ITSA COMMUNITY WEBSITE - INTERACTIVE PARTICLES & SCRIPT ENGINE
+   ========================================================================== */
 
-  // const dropdown = document.querySelector(".dropdown");
-  // const btn = dropdown.querySelector(".dropbtn");
+(function() {
+  const canvas = document.getElementById('particles-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
 
-  // btn.addEventListener("click", function(e) {
-  //   e.preventDefault();
-  //   dropdown.classList.toggle("show");
-  // });
-
-  // // Close if clicked outside
-  // window.addEventListener("click", function(e) {
-  //   if (!dropdown.contains(e.target)) {
-  //     dropdown.classList.remove("show");
-  //   }
-  // });
-
-
-
-
-const menuToggle = document.getElementById('menu-toggle');
-const navLinks = document.getElementById('navlinks');
-const links = navLinks.querySelectorAll('a'); // all nav links
-
-// Toggle menu on hamburger click
-menuToggle.addEventListener('click', (e) => {
-  navLinks.classList.toggle('active');
-  e.stopPropagation(); // prevent document click from closing it immediately
-});
-
-// Close menu when clicking outside
-document.addEventListener('click', (e) => {
-  if (!navLinks.contains(e.target) && e.target !== menuToggle) {
-    navLinks.classList.remove('active');
+  let width, height;
+  function resize() {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
   }
-});
+  window.addEventListener('resize', resize);
+  resize();
 
+  const particles = [];
+  const sparks = [];
+  const colors = ['#FF9933', '#FFFFFF', '#138808', '#38BDF8'];
 
+  // Ambient Embers Generation
+  const particleCount = Math.min(Math.floor(window.innerWidth / 25), 45);
+  for (let i = 0; i < particleCount; i++) {
+    particles.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      radius: Math.random() * 2 + 1,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: -Math.random() * 0.6 - 0.2,
+      alpha: Math.random() * 0.5 + 0.2
+    });
+  }
 
-
-
-// Optional: stop clicks inside navLinks from closing it
-// navLinks.addEventListener('click', (e) => {
-//   e.stopPropagation();
-// });
-window.addEventListener("load", () => {
-  if (window.location.hash) {
-    const targetEl = document.querySelector(window.location.hash);
-    if (targetEl) {
-      // Refresh ScrollTrigger first so positions are correct
-      ScrollTrigger.refresh();
-
-      // Delay a bit to let GSAP finish layout calculations
-      setTimeout(() => {
-        gsap.to(window, {
-          duration: 1,
-          scrollTo: { y: targetEl, offsetY: 60 }, // offset if you have fixed navbar
-          ease: "power2.out"
-        });
-      }, 150);
+  // Interactive Cursor Spark Trail Listener
+  window.addEventListener('mousemove', (e) => {
+    if (Math.random() > 0.4) {
+      sparks.push({
+        x: e.clientX,
+        y: e.clientY + (Math.random() * 10 - 5),
+        radius: Math.random() * 2.5 + 1,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        vx: (Math.random() - 0.5) * 1.5,
+        vy: (Math.random() - 0.5) * 1.5 - 0.5,
+        alpha: 0.85
+      });
     }
+
+    // Dynamic Card Mouse Spotlight Coordinates
+    document.querySelectorAll('.teamCircle, .outerCard, .point, .indy-box, .contact-content').forEach(card => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
+
+  // 60fps Render Loop
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+
+    // Render Ambient Embers
+    particles.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.y < 0) p.y = height;
+      if (p.x < 0) p.x = width;
+      if (p.x > width) p.x = 0;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fillStyle = p.color;
+      ctx.globalAlpha = p.alpha;
+      ctx.shadowBlur = 10;
+      ctx.shadowColor = p.color;
+      ctx.fill();
+    });
+
+    // Render Cursor Sparks
+    for (let i = sparks.length - 1; i >= 0; i--) {
+      const s = sparks[i];
+      s.x += s.vx;
+      s.y += s.vy;
+      s.alpha -= 0.025;
+      s.radius *= 0.96;
+
+      if (s.alpha <= 0 || s.radius <= 0.2) {
+        sparks.splice(i, 1);
+        continue;
+      }
+
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
+      ctx.fillStyle = s.color;
+      ctx.globalAlpha = Math.max(0, s.alpha);
+      ctx.shadowBlur = 12;
+      ctx.shadowColor = s.color;
+      ctx.fill();
+    }
+
+    ctx.globalAlpha = 1;
+    ctx.shadowBlur = 0;
+    requestAnimationFrame(animate);
   }
-});
+  animate();
+})();
 
-//gsap animations
-const timeline = gsap.timeline();
-timeline.from('.homeH1',{
-  y:-200,
-  opacity:0,
-  duration:1.5,
-})
-timeline.from('.homeParagraph',{
-  y:200,
-  opacity:0,
-  duration:1,
-})
-timeline.from('.buttons',{
-  opacity:0,
-})
-
-if(window.innerWidth <768){
-  const timeline2=gsap.timeline();
-  timeline2.from('.about',{
-    scrollTrigger:{
-      trigger:'.about',
-      scrub:true,
-    },
-    y:100,
-    opacity:0,
-    duration:1.5,
-  })
-  timeline2.from('.about-subtitle',{
-    scrollTrigger:{
-      trigger:'.about-subtitle',
-      scrub:true,
-    },
-    y:100,
-    opacity:0,
-    duration:1.5,
-  })
-  timeline2.from('.point',{
-    scrollTrigger:{
-      trigger:'.point',
-      scrub:true,
-    },
-    x:-100,
-    opacity:0,
-    duration:1.5,
-    stagger:0.3,
-  })
-  timeline2.from('.imag',{
-    scrollTrigger:{
-      trigger:'.imag',
-      scrub:true,
-    },
-    x:-100,
-    opacity:0,
-    duration:1.5,
-    stagger:0.3,
-  })
-const timeline3=gsap.timeline();
- timeline3.from('.team-title',{
-    scrollTrigger:{
-      trigger:'.team-title',
-      scrub:true,
-    },
-    y:100,
-    opacity:0,
-    duration:1.5,
- })
-timeline3.from('.teamp',{
-  scrollTrigger:{
-    trigger:'.teamp',
-    scrub:true,
-  },
-  y:100,
-  opacity:0,
-  duration:1.5,
-})
-const timeline4=gsap.timeline();
-timeline4.from('.headings',{
-  scrollTrigger:{
-   trigger:'.headings',
-   scrub:true,
-  },
-  y:100,
-  opacity:0,
-  duration:1.5,    
-})
-timeline4.from('.eventSubheading',{
-  scrollTrigger:{
-   trigger:'.eventSubheading',
-   scrub:true,
-  },
-  y:100,
-  opacity:0,
-  duration:1.5,    
-})
-timeline4.from('.outerCard1',{
-  scrollTrigger:{
-   trigger:'.outerCard1',
-   scrub:true,
-  },
-  x:-100,
-  opacity:0, 
-  duration:1,  
-})
-timeline4.from('.outerCard2',{
-  scrollTrigger:{
-   trigger:'.outerCard2',
-   scrub:true,
-  },
-  x:-100,
-  opacity:0, 
-  duration:1,  
-})
-timeline4.from('.outerCard3',{
-  scrollTrigger:{
-   trigger:'.outerCard3',
-   scrub:true,
-  },
-  x:-100,
-  opacity:0, 
-  duration:1,  
-})
-timeline3.from('.eventbtn',{
-  scrollTrigger:{
-   trigger:'.eventbtn',
-   scrub:true,
-  },
-  x:-100,
-  opacity:0, 
-})
-timeline4.from('.eventButton',{
-  scrollTrigger:{
-   trigger:'.eventButton',
-   scrub:true,
-  },
-  x:-100,
-  opacity:0, 
-})
-const timeline5=gsap.timeline();
-timeline5.from('.contact-title',{
-  scrollTrigger:{
-    trigger:'.contact-title',
-    scrub:true,
-  },
-  y:100,
-  opacity:0,
-})
-timeline5.from('.contact-text',{
-  scrollTrigger:{
-    trigger:'.contact-text',
-    scrub:true,
-  },
-  y:100,
-  opacity:0,
-})
-timeline5.from('.contact-info',{
-  scrollTrigger:{
-    trigger:'.mail',
-    scrub:true,
-  },
-  x:-30,
-  opacity:0,
-})
-}
-else{
-  const timeline2=gsap.timeline();
-  timeline2.from('.about',{
-    scrollTrigger:{
-      trigger:'.about',
-      scrub:true,
-    },
-    y:100,
-    opacity:0,
-    duration:1.5,
-  })
-  timeline2.from('.about-subtitle',{
-    scrollTrigger:{
-      trigger:'.about-subtitle',
-      scrub:true,
-    },
-    y:100,
-    opacity:0,
-    duration:1.5,
-  })
-  timeline2.from('.point',{
-    scrollTrigger:{
-      trigger:'.point',
-      scrub:true,
-    },
-    x:-100,
-    opacity:0,
-     
-  })
-  timeline2.from('.imag',{
-    scrollTrigger:{
-      trigger:'.imag',
-      scrub:true,
-    },
-    x:-100,
-    opacity:0,
-    
-  })
-const timeline3=gsap.timeline();
- timeline3.from('.team-title',{
-    scrollTrigger:{
-      trigger:'.team-title',
-      scrub:true,
-    },
-    y:100,
-    opacity:0,
-    duration:1.5,
- })
-timeline3.from('.teamp',{
-  scrollTrigger:{
-    trigger:'.teamp',
-    scrub:true,
-  },
-  y:100,
-  opacity:0,
-  duration:1.5,
-})
-const timeline4=gsap.timeline();
-timeline4.from('.headings',{
-  scrollTrigger:{
-   trigger:'.headings',
-   scrub:true,
-  },
-  y:100,
-  opacity:0,
-  duration:1.5,    
-})
-timeline4.from('.eventSubheading',{
-  scrollTrigger:{
-   trigger:'.eventSubheading',
-   scrub:true,
-  },
-  y:100,
-  opacity:0,
-  duration:1.5,    
-})
-timeline4.from('.outerCard1',{
-  scrollTrigger:{
-   trigger:'.outerCard1',
-   scrub:true,
-   start:"top 80%",
-   end:"top 30%",
-  //  markers:true,
-  },
-  x:-100,
-  opacity:0, 
-  duration:1,  
-})
-timeline4.from('.outerCard2',{
-  scrollTrigger:{
-   trigger:'.outerCard2',
-   scrub:true,
-   start:"top 80%",
-   end:"top 30%",
-  //  markers:true,
-  },
-  x:-100,
-  opacity:0, 
-  duration:1,  
-})
-timeline4.from('.outerCard3',{
-  scrollTrigger:{
-   trigger:'.outerCard3',
-   scrub:true,
-   start:"top 80%",
-   end:"top 30%",
-  //  markers:true,
-  },
-  x:-100,
-  opacity:0, 
-  duration:1,  
-})
-timeline3.from('.eventbtn',{
-  scrollTrigger:{
-   trigger:'.eventbtn',
-   scrub:true,
-  },
-  x:-100,
-  opacity:0, 
-})
-timeline4.from('.eventButton',{
-  scrollTrigger:{
-   trigger:'.eventButton',
-   scrub:true,
-  },
-  x:-100,
-  opacity:0, 
-})
-const timeline5=gsap.timeline();
-timeline5.from('.contact-title',{
-  scrollTrigger:{
-    trigger:'.contact-title',
-    scrub:true,
-    
-  },
-  y:100,
-  opacity:0,
-})
-timeline5.from('.contact-text',{
-  scrollTrigger:{
-    trigger:'.contact-text',
-    scrub:true,
-   start:"top 90%",
-   end:"top 60%",
-  //  markers:true,
-  },
-  y:100,
-  opacity:0,
-})
-timeline5.from('.contact-info',{
-  scrollTrigger:{
-    trigger:'.mail',
-    scrub:true,
-    start:"top 80%",
-   end:"top 50%",
-  //  markers:true,
-  },
-  x:-30,
-  opacity:0,
-})
-}
-
-//nav active link
-const navl = document.querySelectorAll(".navl");
-
-  navl.forEach(link => {
-    link.addEventListener("click", () => {
-      // Remove active class from all links
-      navl.forEach(l => l.classList.remove("active"));
-      // Add active class to clicked link
-      link.classList.add("active");
-    });
+// Mobile Navbar Toggle & Click Outside Handler
+const menuToggle = document.getElementById('menu-toggle');
+const navlinks = document.getElementById('navlinks');
+if (menuToggle && navlinks) {
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    navlinks.classList.toggle('active');
   });
 
-  const sections = document.querySelectorAll(".sections");
-  window.addEventListener("scroll", () => {
-    let current = "";
+  document.addEventListener('click', (e) => {
+    if (!navlinks.contains(e.target) && !menuToggle.contains(e.target)) {
+      navlinks.classList.remove('active');
+    }
+  });
 
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop -230; // adjust for navbar height
-      const sectionHeight = section.clientHeight;
-
-      if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
-        current = section.getAttribute("id");
-      }
-    });
-
-    navl.forEach(link => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === "#" + current) {
-        link.classList.add("active");
-      }
+  document.querySelectorAll('.navl').forEach(link => {
+    link.addEventListener('click', () => {
+      navlinks.classList.remove('active');
     });
   });
+}
+
+// Scroll Reveal Observer
+const observerOptions = { threshold: 0.12, rootMargin: '0px 0px -40px 0px' };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
