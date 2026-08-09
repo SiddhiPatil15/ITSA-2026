@@ -966,3 +966,49 @@ background-image: linear-gradient(120deg, rgb(78, 156, 205) , #000000);
         font-size: 1.2rem;
       }
     }
+
+
+  /* Upcoming Events section (single card) */
+  .upcomingSection{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+    background-color: #ffffff;
+    color: #1e3a8a;
+    margin-top: 30px;
+  }
+  .upcomingSection .teamp{
+    color: #6b7280;
+    margin-bottom: 20px;
+  }
+  .upcoming-cards{
+    display:flex;
+    justify-content:center;
+    width:100%;
+  }
+  .outerCard-upcoming{
+    width:900px;
+    max-width:95%;
+    display:flex;
+    gap:20px;
+    align-items:center;
+    padding:20px;
+    border-radius:20px;
+    background: linear-gradient(180deg, #ffffff, #f7fbff);
+    box-shadow: 0 10px 30px rgba(2,6,23,0.08);
+    cursor: pointer;
+  }
+  .outerCard-upcoming .info{ flex:1; align-items:flex-start; text-align:left; }
+  .outerCard-upcoming .n-1{ font-size:1.1rem; color:#ff6b6b; font-weight:700; margin-top:0; }
+  .outerCard-upcoming .n-2{ font-size:1.6rem; }
+  .outerCard-upcoming .eventParagraph{ color:#6b7280; }
+  .outerCard-upcoming .f-3{ width:320px; height:200px; border-radius:16px; box-shadow:5px 5px 10px rgba(0,0,0,0.08); background-size:cover; background-position:center; }
+
+  @media (max-width: 768px){
+    .outerCard-upcoming{ flex-direction: column; padding:16px; }
+    .outerCard-upcoming .f-3{ width:100%; height:180px; }
+    .outerCard-upcoming .info{ text-align:center; align-items:center; }
+  }
