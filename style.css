@@ -98,6 +98,8 @@ body {
   position: fixed;
   width: 70%;
   top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   background: rgba(0, 56, 63, 0.352);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -742,6 +744,9 @@ border-radius: 30px;
 }
 .im3{
     background-image: url("Poster3.jpeg");  
+}
+.im4{
+    background-image: url("event (1).webp");  
 }
 
 #eventButton{

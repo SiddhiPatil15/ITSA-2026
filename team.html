@@ -41,6 +41,8 @@
             position: fixed;
             width: 70%;
             top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             background: rgba(0, 56, 63, 0.352);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
@@ -80,6 +82,11 @@
             font-size: 2rem;
             cursor: pointer;
             color: white;
+        }
+
+        /* scroll offset so anchor sections don't hide under fixed navbar */
+        h2[id], .teamSection {
+            scroll-margin-top: 120px;
         }
 
 
@@ -391,7 +398,6 @@
           <a href="index.html#about" class="navl">ABOUT</a>
           <a href="index.html#team" class="navl active">TEAM</a>
           <a href="index.html#event" class="navl">EVENTS</a>
-          <a href="event.html" class="navl">CREATIVERSE 2.0</a>
           <a href="index.html#contact" class="navl cont">CONTACT</a>
         </div>
       </div>
