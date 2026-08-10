@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
@@ -19,6 +20,7 @@
       background: linear-gradient(to right, #FF6B00 33.33%, #ffffff 33.33%, #ffffff 66.66%, #138808 66.66%);
       z-index: 9999;
     }
+
     /* || General and Base Styles */
     body {
       margin: 0;
@@ -34,6 +36,7 @@
       align-items: center;
       min-height: 100vh;
     }
+
     main {
       flex: 1;
       display: flex;
@@ -42,6 +45,7 @@
       padding: 40px 20px;
       width: 100%;
     }
+
     h2.heading {
       font-family: 'Cinzel', serif;
       font-size: clamp(2rem, 5vw, 3.5rem);
@@ -60,58 +64,58 @@
 
 
     .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 50px;
-  height: 80px;
-  position: fixed;
-  width: 70%;
-  top: 20px;
-  background: rgba(6, 20, 6, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 107, 0, 0.35);
-  z-index: 1000;
-  box-shadow: 0 0 18px rgba(255,107,0,0.15), 0 0 18px rgba(19,136,8,0.10);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 50px;
+      height: 80px;
+      position: fixed;
+      width: 70%;
+      top: 20px;
+      background: rgba(6, 20, 6, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 107, 0, 0.35);
+      z-index: 1000;
+      box-shadow: 0 0 18px rgba(255, 107, 0, 0.15), 0 0 18px rgba(19, 136, 8, 0.10);
     }
 
-.navlogo {
-  background-image: url("ITSAlogo.png");
-  
-  width: 90px;
-  height: 90px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  
+    .navlogo {
+      background-image: url("ITSAlogo.png");
 
-}
+      width: 90px;
+      height: 90px;
+      background-size: contain;
+      background-repeat: no-repeat;
 
 
-.navlinks {
-  display: flex;
-  gap: 25px;
-  flex-direction: row;
-}
+    }
 
-.navlinks a {
-  font-size: 1.2rem;
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s;
-}
 
-.navlinks a:hover {
-  color: #FF6B00;
-}
+    .navlinks {
+      display: flex;
+      gap: 25px;
+      flex-direction: row;
+    }
 
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: white;
-}
+    .navlinks a {
+      font-size: 1.2rem;
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .navlinks a:hover {
+      color: #FF6B00;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: white;
+    }
 
 
     /* || Popup */
@@ -127,9 +131,9 @@
       justify-content: center;
       align-items: center;
       z-index: 1000;
-      
+
     }
-    
+
     .popup-content {
       position: relative;
       background: #0e1a0e;
@@ -147,23 +151,34 @@
       max-height: 90vh;
       word-wrap: break-word;
     }
+
     @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
+
     .popup h2 {
       font-family: 'Cinzel', serif;
       color: #FF6B00;
       margin-bottom: 15px;
       font-size: 1.5rem;
     }
+
     .popup p {
       color: #ddd;
       margin-bottom: 20px;
       font-size: 0.95rem;
       white-space: pre-line;
       line-height: 1.8;
-    }  
+    }
+
     .popup button {
       background: linear-gradient(135deg, #FF6B00, #138808);
       border: none;
@@ -176,10 +191,12 @@
       transition: 0.3s;
       flex: 1 1 auto;
     }
+
     .popup button:hover {
       background: linear-gradient(135deg, #138808, #FF6B00);
       transform: scale(1.03);
     }
+
     .close-btn {
       position: absolute;
       top: 10px;
@@ -212,12 +229,14 @@
       width: 90%;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 30px;
+      padding: 30px 24px;
       border-radius: 12px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      box-sizing: border-box;
     }
+
     .events-hero {
       display: flex;
       flex-direction: column;
@@ -229,7 +248,11 @@
       z-index: 1;
       height: 55vh;
       overflow-x: hidden;
+      padding: 0 20px;
+      width: 100%;
+      box-sizing: border-box;
     }
+
     #background-video {
       position: fixed;
       right: 0;
@@ -240,8 +263,9 @@
       object-fit: cover;
       filter: brightness(0.25) hue-rotate(100deg) saturate(1.5);
     }
+
     .events-hero h1 {
-      font-size: clamp(2.5rem, 10vw, 120px);
+      font-size: clamp(2rem, 10vw, 120px);
       margin-bottom: 10px;
       background: linear-gradient(180deg, #FF6B00 0%, #ffffff 50%, #138808 100%);
       -webkit-background-clip: text;
@@ -250,17 +274,34 @@
       text-transform: uppercase;
       font-weight: 900;
       animation: tricolorPulse 3s ease-in-out infinite;
+      padding: 0 10px;
+      width: 100%;
+      box-sizing: border-box;
+      word-break: break-word;
     }
+
     @keyframes tricolorPulse {
-      0%, 100% { filter: drop-shadow(0 0 10px rgba(255,107,0,0.8)); }
-      50% { filter: drop-shadow(0 0 18px rgba(19,136,8,0.9)); }
+
+      0%,
+      100% {
+        filter: drop-shadow(0 0 10px rgba(255, 107, 0, 0.8));
+      }
+
+      50% {
+        filter: drop-shadow(0 0 18px rgba(19, 136, 8, 0.9));
+      }
     }
+
     .events-hero p {
       max-width: 700px;
       margin: 0 auto;
-      color: #ccc;
-      font-size: 1.2rem;
+      color: #fff;
+      font-size: 1rem;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+      padding: 0 16px;
+      box-sizing: border-box;
     }
+
 
     /* || Current Events Grid */
     .grid {
@@ -274,6 +315,40 @@
       z-index: 1;
       justify-items: center;
     }
+
+    /* Creativerse 2.0 banner */
+    .creativerse-banner {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 30px auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(255, 107, 0, 0.35), 0 0 30px rgba(19, 136, 8, 0.2);
+      border: 2px solid rgba(255, 107, 0, 0.4);
+    }
+
+    .creativerse-banner img {
+      width: 100%;
+      display: block;
+      border-radius: 14px;
+    }
+
+    /* Card poster image */
+    .card-poster {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      object-fit: cover;
+      max-height: 340px;
+      display: block;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .card-poster {
+      transform: scale(1.02);
+    }
+
     .card {
       backdrop-filter: blur(8px);
       background: rgba(10, 20, 10, 0.6);
@@ -289,10 +364,12 @@
       justify-content: space-between;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .card:hover {
       transform: translateY(-8px) scale(1.02);
       box-shadow: 0 10px 30px rgba(255, 107, 0, 0.4), 0 10px 30px rgba(19, 136, 8, 0.3);
     }
+
     .card h3 {
       font-family: 'Cinzel', serif;
       font-size: 1.4rem;
@@ -302,11 +379,13 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+
     .card p {
       font-size: 0.95rem;
       color: #bbb;
       flex-grow: 1;
     }
+
     .tag {
       display: inline-block;
       font-size: 0.75rem;
@@ -316,11 +395,13 @@
       border-radius: 5px;
       margin-bottom: 10px;
     }
+
     .buttons {
       margin-top: 15px;
       display: flex;
       gap: 10px;
     }
+
     .btn {
       flex: 1;
       text-align: center;
@@ -333,10 +414,11 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
+
     .btn:hover {
       background: linear-gradient(135deg, #138808, #FF6B00);
       transform: scale(1.05);
-      box-shadow: 0 4px 15px rgba(255,107,0,0.4);
+      box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);
     }
 
     /* || Past Events Section */
@@ -350,6 +432,7 @@
       align-items: center;
       z-index: 1;
     }
+
     .eventCards {
       margin-top: 20px;
       display: grid;
@@ -361,6 +444,7 @@
       /* background-color: pink; */
       line-break: auto;
     }
+
     .outerCard {
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -370,37 +454,44 @@
       flex-direction: column;
       gap: 15px;
     }
+
     .f-3:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(255, 77, 77, 0.5);
     }
+
     .info {
       display: flex;
       gap: 15px;
       align-items: flex-start;
     }
+
     .n-1 {
       font-size: 2.8rem;
       font-weight: 200;
       color: white;
       line-height: 1;
     }
+
     .f-1 {
       display: flex;
       flex-direction: column;
       gap: 5px;
     }
+
     .n-2 {
       font-family: 'Poppins', sans-serif;
       font-size: 1.4rem;
       color: #ff4d4d;
       font-weight: 600;
     }
+
     .eventParagraph {
       color: #959899;
       font-family: 'Poppins', sans-serif;
       font-size: 0.95rem;
     }
+
     .f-3 {
       filter: grayscale(50%);
       background-size: cover;
@@ -411,19 +502,32 @@
       object-fit: cover;
       transition: filter 0.3s ease;
     }
+
     .f-3:hover {
       filter: grayscale(0%);
     }
-    .im1 { background-image: url("Poster1.png"); }
-    .im2 { background-image: url("Poster2.png"); }
-    .im3 { background-image: url("Poster3.jpeg"); }
-    .im4 { background-image: url("Poster4.png"); }
 
-   
+    .im1 {
+      background-image: url("Poster1.png");
+    }
+
+    .im2 {
+      background-image: url("Poster2.png");
+    }
+
+    .im3 {
+      background-image: url("Poster3.jpeg");
+    }
+
+    .im4 {
+      background-image: url("Poster4.png");
+    }
+
+
 
     /* || Responsive Design */
     @media (max-width: 1008px) {
-    
+
 
       footer {
         flex-direction: column;
@@ -433,30 +537,45 @@
     }
 
     @media (max-width: 768px) {
-    #background-video {
+      #background-video {
         position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -1;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
       }
+
       body {
         background-color: #000000;
       }
+
       main {
         padding: 20px 10px;
       }
+
       .grid {
         gap: 30px;
       }
-      .events-hero p {
-        font-size: 1rem;
+
+      .events-hero {
+        aspect-ratio: unset;
+        min-height: 42vw;
       }
+
+      .hero-text-wrap {
+        bottom: 10px;
+        padding: 10px 14px 12px;
+      }
+
+      .events-hero p {
+        font-size: 0.9rem;
+      }
+
       .eventCards {
         gap: 30px;
       }
@@ -471,6 +590,7 @@
         justify-content: center;
         align-items: center;
       }
+
       .events-hero h1 {
         font-size: 4em;
         display: flex;
@@ -478,21 +598,25 @@
         align-items: center;
         text-align: center;
       }
-    
+
       .card {
         padding: 15px;
       }
+
       .btn {
         font-size: 0.8rem;
         padding: 6px 10px;
       }
+
       .info {
         flex-direction: column;
         gap: 5px;
       }
+
       .n-1 {
         font-size: 2rem;
       }
+
       .n-2 {
         font-size: 1.2rem;
       }
@@ -509,19 +633,21 @@
       backdrop-filter: blur(10px);
       z-index: 10;
     }
+
     footer a {
       color: #ff4d4d;
       text-decoration: none;
       transition: color 0.3s;
     }
+
     footer a:hover {
       color: rgb(204, 0, 0);
     }
 
 
-        @media (max-width: 1008px) {
-    
-      
+    @media (max-width: 1008px) {
+
+
       footer {
         flex-direction: column;
         gap: 8px;
@@ -530,60 +656,141 @@
     }
 
     /* MEDIA QUERIES */
-@media (max-width: 1024px) {
- 
-  .menu-toggle {
-    display: block;
-  }
- .navlinks {
-    position: absolute;
-    top: 100px;
-    right: 20px;
-    flex-direction: column;
-    gap: 50px;
-    max-height: 0; 
-    border-radius: 12px;
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out, padding 0.3s ease-in-out;
-    background: none; 
-}
+    @media (max-width: 1024px) {
 
-/* Flipped background image only */
-.navlinks::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #000;
-  
-   
-    z-index: -1; /* keep it behind the links */
-}
+      .menu-toggle {
+        display: block;
+      }
+
+      .navlinks {
+        position: absolute;
+        top: 100px;
+        right: 20px;
+        flex-direction: column;
+        gap: 50px;
+        max-height: 0;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out, padding 0.3s ease-in-out;
+        background: none;
+      }
+
+      /* Flipped background image only */
+      .navlinks::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
 
 
-  .navlinks.active {
-    max-height: 570px;
-    padding: 90px;
-  }
-}
-
-@media (max-width: 768px) {
-
- 
-  .navbar {
-    margin-left: 10%;
-    width: 90%;
-    padding: 10px 10px;
-  }
-}
- 
+        z-index: -1;
+        /* keep it behind the links */
+      }
 
 
+      .navlinks.active {
+        max-height: 570px;
+        padding: 90px;
+      }
+    }
 
+    @media (max-width: 768px) {
+      .navbar {
+        width: 92%;
+        left: 4%;
+        right: 4%;
+        margin-left: 0;
+        transform: none;
+        padding: 10px 14px;
+        top: 10px;
+        height: 70px;
+      }
+
+      .navlogo {
+        width: 65px;
+        height: 65px;
+      }
+
+      .navlinks.active {
+        top: 78px;
+        right: 10px;
+        padding: 50px 30px;
+      }
+
+      main {
+        padding: 20px 14px;
+      }
+
+      .technova-events {
+        width: 100%;
+        padding: 20px 16px;
+      }
+
+      .events-hero {
+        height: auto;
+        min-height: 40vh;
+        padding: 80px 20px 30px;
+      }
+
+      .events-hero p {
+        font-size: 0.9rem;
+        padding: 0 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .events-hero h1 {
+        font-size: clamp(1.8rem, 12vw, 4rem);
+      }
+
+      .grid {
+        padding: 0 10px;
+        gap: 20px;
+      }
+
+      .btn {
+        font-size: 0.78rem;
+        padding: 6px 8px;
+      }
+
+      .eventCards {
+        gap: 30px;
+        padding: 30px 0;
+      }
+    }
+
+    @media (max-width: 390px) {
+      body {
+        overflow-x: hidden;
+      }
+
+      .events-hero h1 {
+        font-size: clamp(1.4rem, 11vw, 3rem);
+      }
+
+      .events-hero {
+        padding: 90px 16px 24px;
+      }
+
+      .card {
+        padding: 12px;
+      }
+
+      .popup-content {
+        padding: 15px;
+        font-size: 0.85rem;
+      }
+
+      .creativerse-banner {
+        border-radius: 10px;
+      }
+    }
   </style>
 </head>
+
 <body>
   <div class="navbar">
     <div class="navlogo"></div>
@@ -593,13 +800,13 @@
       <a href="index.html#about">ABOUT</a>
       <a href="index.html#team">TEAM</a>
 
-  
-  <a href="index.html#event" class="dropbtn ">EVENTS</a>
-  <a href="#" class="active">CREATIVERSE 2.0</a>
-  
+
+      <a href="index.html#event" class="dropbtn ">EVENTS</a>
+      <a href="#" class="active">CREATIVERSE 2.0</a>
 
 
-      
+
+
       <a href="index.html#contact">CONTACT</a>
     </div>
   </div>
@@ -622,33 +829,48 @@
           <source src="horror.webm" type="video/webm">
         </video>
         <h1 id="bigh1 bigsap">Creativerse 2.0</h1>
-        <p>Step into the world of creativity and technology — thrilling events await combining technical challenges and artistic adventures.</p>
+        <p>Step into the world of creativity and technology — thrilling events await combining technical challenges and
+          artistic adventures.</p>
       </section>
+      <!-- Creativerse 2.0 Banner -->
+      <div class="creativerse-banner">
+        <img src="creativerse2-banner.png" alt="Creativerse 2.0 – ITSA Presents" />
+      </div>
+
       <section class="grid">
+        <!-- Prompt War Card -->
         <div class="card">
+          <img src="poster-promptwar.jpg" alt="Prompt War Poster" class="card-poster" />
           <div>
             <h3>PromptWar – AI Website Creation</h3>
-            <p>Put your creativity and AI skills to the test — craft the perfect prompt, build a website, and let your imagination battle it out!</p>
+            <p>Put your creativity and AI skills to the test — craft the perfect prompt, build a website, and let your
+              imagination battle it out!</p>
           </div>
           <div class="buttons">
             <button class="btn" onclick="location.href='https://forms.gle/N1hfPcygwL6jXHjo6'">Register</button>
             <button class="btn rule-btn" data-event="PromptWar – AI Website Creation">Rules</button>
           </div>
         </div>
+        <!-- Poster Making Card -->
         <div class="card">
+          <img src="poster-postermaking.jpg" alt="Poster Making Poster" class="card-poster" />
           <div>
             <h3>Poster Making Competition</h3>
-            <p>Express your creativity on paper — design a poster that speaks volumes. Bring your art supplies and let your imagination shine!</p>
+            <p>Express your creativity on paper — design a poster that speaks volumes. Bring your art supplies and let
+              your imagination shine!</p>
           </div>
           <div class="buttons">
             <button class="btn" onclick="location.href='https://forms.gle/CvBWacNwtdVophEU6'">Register</button>
             <button class="btn rule-btn" data-event="Poster Making Competition">Rules</button>
           </div>
         </div>
+        <!-- CSS Battle Card -->
         <div class="card">
+          <img src="poster-cssbattle.jpg" alt="CSS Battle Poster" class="card-poster" />
           <div>
             <h3>CSS BATTLE</h3>
-            <p>Recreate pixel-perfect targets using only HTML and CSS. No JavaScript allowed — just your styling skills and creativity!</p>
+            <p>Recreate pixel-perfect targets using only HTML and CSS. No JavaScript allowed — just your styling skills
+              and creativity!</p>
           </div>
           <div class="buttons">
             <button class="btn" onclick="location.href='https://forms.gle/DGaJB2co4Yi2KgEH8'">Register</button>
@@ -665,7 +887,8 @@
             <div class="n-1">01</div>
             <div class="f-1">
               <div class="n-2">Peer to Peer Talk</div>
-              <p class="eventParagraph">A peer-to-peer session where a senior shared valuable tips and strategies for GATE preparation.</p>
+              <p class="eventParagraph">A peer-to-peer session where a senior shared valuable tips and strategies for
+                GATE preparation.</p>
             </div>
           </div>
           <div class="f-3 im1"></div>
@@ -675,7 +898,8 @@
             <div class="n-1">02</div>
             <div class="f-1">
               <div class="n-2">Alumni Talk</div>
-              <p class="eventParagraph">An alumni talk where a senior guided students about pursuing higher studies abroad.</p>
+              <p class="eventParagraph">An alumni talk where a senior guided students about pursuing higher studies
+                abroad.</p>
             </div>
           </div>
           <div class="f-3 im2"></div>
@@ -685,7 +909,8 @@
             <div class="n-1">03</div>
             <div class="f-1">
               <div class="n-2">CreatiVerse 2k25</div>
-              <p class="eventParagraph">An Independence Day celebration by ITSA, featuring games, gifts, and community events to honor 15 August.</p>
+              <p class="eventParagraph">An Independence Day celebration by ITSA, featuring games, gifts, and community
+                events to honor 15 August.</p>
             </div>
           </div>
           <div class="f-3 im3"></div>
@@ -697,36 +922,38 @@
     <a href="#home">© 2026 ITSA Committee | Made with ❤️ by <span>ITSA-SJCEM Students</span></a>
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+    integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
- const navLinks = document.getElementById('navlinks');
- const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('navlinks');
+    const menuToggle = document.getElementById('menu-toggle');
 
-  // Close menu when clicking outside
-document.addEventListener('click', (e) => {
-  if (!navLinks.contains(e.target) && e.target !== menuToggle) {
-    navLinks.classList.remove('active');
-  }
-});
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && e.target !== menuToggle) {
+        navLinks.classList.remove('active');
+      }
+    });
 
 
     // GSAP animations for cards
     gsap.to(".card", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out", stagger: 0.2 });
-    
+
     // Floating orb animations
-    if(window.innerWidth > 600){
+    if (window.innerWidth > 600) {
       gsap.to("#orb1", { x: -200, y: -150, duration: 8, repeat: -1, yoyo: true, ease: "sine.inOut" });
       gsap.to("#orb2", { x: 200, y: 100, duration: 10, repeat: -1, yoyo: true, ease: "sine.inOut" });
       gsap.to("#orb3", { x: -150, y: 200, duration: 12, repeat: -1, yoyo: true, ease: "sine.inOut" });
       const colors = ["rgba(255,77,77,0.4)", "rgba(128,0,128,0.4)", "rgba(0,255,100,0.3)"];
       function shiftColors() {
         document.querySelectorAll('.orb').forEach((orb) => {
-          gsap.to(orb, { background: `radial-gradient(circle, ${colors[Math.floor(Math.random()*colors.length)]} 0%, transparent 70%)`, duration: 3, ease: "sine.inOut" });
+          gsap.to(orb, { background: `radial-gradient(circle, ${colors[Math.floor(Math.random() * colors.length)]} 0%, transparent 70%)`, duration: 3, ease: "sine.inOut" });
         });
       }
       setInterval(shiftColors, 3000);
     }
-    
+
     // Popup logic
 
     const popup = document.getElementById("popup");
@@ -741,46 +968,47 @@ document.addEventListener('click', (e) => {
     };
 
 
-const registerLinks = {
-  "PromptWar – AI Website Creation": "https://forms.gle/N1hfPcygwL6jXHjo6",
-  "Poster Making Competition": "https://forms.gle/CvBWacNwtdVophEU6",
-  "CSS BATTLE": "https://forms.gle/DGaJB2co4Yi2KgEH8"
-};
-   document.querySelectorAll(".rule-btn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const eventName = btn.dataset.event;
-    popupTitle.textContent = eventName + " - Rules";
-    popupText.textContent = rules[eventName];
-    popup.style.display = "flex";
-
-    // set register link dynamically
-    const registerBtn = document.getElementById("registerBtn");
-    registerBtn.onclick = () => {
-      window.open(registerLinks[eventName], "_blank"); // opens in new tab
+    const registerLinks = {
+      "PromptWar – AI Website Creation": "https://forms.gle/N1hfPcygwL6jXHjo6",
+      "Poster Making Competition": "https://forms.gle/CvBWacNwtdVophEU6",
+      "CSS BATTLE": "https://forms.gle/DGaJB2co4Yi2KgEH8"
     };
-  });
-});
+    document.querySelectorAll(".rule-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const eventName = btn.dataset.event;
+        popupTitle.textContent = eventName + " - Rules";
+        popupText.textContent = rules[eventName];
+        popup.style.display = "flex";
+
+        // set register link dynamically
+        const registerBtn = document.getElementById("registerBtn");
+        registerBtn.onclick = () => {
+          window.open(registerLinks[eventName], "_blank"); // opens in new tab
+        };
+      });
+    });
     function closePopup() {
       popup.style.display = "none";
     }
     window.onclick = (e) => { if (e.target === popup) closePopup(); };
-  
+
     // Mobile menu toggle
     document.getElementById("menu-toggle").addEventListener("click", () => {
       document.getElementById("navlinks").classList.toggle("active");
       //nav click active
-      
-    const navl =document.querySelectorAll('.activate');
 
-  navl.forEach(link => {
-    link.addEventListener("click", () => {
-      // Remove active class from all links
-      navl.forEach(l => l.classList.remove("active"));
-      // Add active class to clicked link
-      link.classList.add("active");
-    });
-  });
+      const navl = document.querySelectorAll('.activate');
+
+      navl.forEach(link => {
+        link.addEventListener("click", () => {
+          // Remove active class from all links
+          navl.forEach(l => l.classList.remove("active"));
+          // Add active class to clicked link
+          link.classList.add("active");
+        });
+      });
     });
   </script>
 </body>
+
 </html>
