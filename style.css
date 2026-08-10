@@ -26,6 +26,34 @@ body {
 
 }
 
+/* Announcement Bar */
+.announcement-bar {
+  display: block;
+  background: linear-gradient(90deg, rgb(0, 87, 154), #16c9ff);
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1001;
+  transition: background 0.3s;
+}
+
+.announcement-bar:hover {
+  background: linear-gradient(90deg, #16c9ff, rgb(0, 87, 154));
+}
+
+@media (max-width: 768px) {
+  .announcement-bar {
+    font-size: 0.85rem;
+    padding: 8px 10px;
+  }
+}
 
 /* NAVBAR */
 
@@ -98,7 +126,7 @@ body {
   height: 100px;
   position: fixed;
   width: 70%;
-  top: 20px;
+  top: 60px;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(0, 56, 63, 0.352);

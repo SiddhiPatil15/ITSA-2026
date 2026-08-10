@@ -362,14 +362,24 @@
         }
 
 
-        @media (max-width: 1008px) {
-
-
-            footer {
-                flex-direction: column;
-                gap: 8px;
-                font-size: 0.8rem;
+        @media (max-width: 1024px) {
+            .navbar { width: 90%; padding: 10px 20px; height: 80px; }
+            .navlinks {
+                position: absolute; top: 90px; right: 20px; flex-direction: column; gap: 20px;
+                background: rgba(0, 0, 0, 0.9); padding: 0; border-radius: 12px; max-height: 0; overflow: hidden;
+                transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out; width: 200px;
             }
+            .navlinks.active { max-height: 400px; padding: 20px; }
+            .menu-toggle { display: block; }
+        }
+        @media (max-width: 768px) {
+            .navbar { width: 95%; padding: 10px 15px; }
+            .navbrand { display: flex; align-items: center; }
+            .brand-text { display: none; }
+            .navlogo { width: 60px; height: 60px; }
+            .teamcards, .row1, .row2 { flex-direction: column; align-items: center; }
+            .outerCard { width: 90%; max-width: 300px; }
+            .teamHeading .heading { font-size: 2rem; }
         }
     </style>
 </head>
