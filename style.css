@@ -130,8 +130,8 @@ body {
   left: 50%;
   transform: translateX(-50%);
   background: rgba(0, 56, 63, 0.352);
-  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   z-index: 1000;
