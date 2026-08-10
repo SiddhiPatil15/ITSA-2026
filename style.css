@@ -478,6 +478,11 @@ span {
   .about-left {
     grid-template-columns: 1fr;
   }
+  
+  .about-left .point:nth-child(3),
+  .about-left .point:nth-child(4) {
+    display: none;
+  }
 
   .about-right {
     grid-template-columns: 1fr 1fr;
@@ -1123,23 +1128,25 @@ span {
 }
 
 .outerCard-upcoming .f-3 {
-  width: 320px;
-  height: 200px;
+  width: 460px;
+  height: 230px;
   border-radius: 16px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.08);
-  background-size: cover;
+  background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 @media (max-width: 768px) {
   .outerCard-upcoming {
     flex-direction: column;
-    padding: 16px;
+    padding: 12px;
+    width: 90%;
   }
 
   .outerCard-upcoming .f-3 {
     width: 100%;
-    height: 180px;
+    height: 150px;
   }
 
   .outerCard-upcoming .info {
