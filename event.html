@@ -1064,23 +1064,46 @@
     const popupImg = document.getElementById("popup-img");
 
     const eventDetails = {
-      "PromptWar – AI Website Creation": {
-        rules: `• Participation is strictly in teams of two (Duo).\n• Entry fee is ₹100 per team.\n• Mobile phones or any external devices are not permitted for prompt generation.\n• Every team must write their original prompt on the sheet provided by the organizers.\n• The prompt entered into the AI tool must exactly match the written prompt.\n• Any copied prompt, plagiarism, or mismatch between the written and AI prompt will result in disqualification.\n• Teams must complete and submit their website within the allotted time.\n• Only the submitted website will be evaluated.\n• The decision of the judges will be final and binding.`,
-        image: "poster-promptwar.jpg",
-        link: "https://docs.google.com/forms/d/e/1FAIpQLSexmnqLr2oSaOI7NUPVEUELtvJ9nWIBZOnQvl-GDaYgRDTjjw/viewform?usp=header"
-      },
-      "Poster Making Competition": {
-        rules: `• Individual (Solo) participation only.\n• Entry fee is ₹50 per participant.\n• One drawing sheet will be provided by the organizers.\n• Participants must bring their own drawing and colouring materials.\n• Posters must be created only during the competition.\n• Mobile phones, printed references, or copied artwork are not allowed.\n• The artwork must be original and relevant to the theme.\n• The decision of the judges will be final and binding.`,
-        image: "poster-postermaking.jpg",
-        link: "https://docs.google.com/forms/d/e/1FAIpQLSexmnqLr2oSaOI7NUPVEUELtvJ9nWIBZOnQvl-GDaYgRDTjjw/viewform?usp=header"
-      },
-      "CSS BATTLE": {
-        rules: `• Only HTML and CSS are permitted.\n• Use of JavaScript is strictly prohibited.\n• External CSS libraries and frameworks (Bootstrap, Tailwind, etc.) are not allowed.\n• Participants must submit all required project files before the deadline.\n• Internet usage may be restricted during the competition.\n• The decision of the judges will be final and binding.`,
-        image: "poster-cssbattle.jpg",
-        link: "https://docs.google.com/forms/d/e/1FAIpQLSexmnqLr2oSaOI7NUPVEUELtvJ9nWIBZOnQvl-GDaYgRDTjjw/viewform?usp=header"
-      }
-    };
+  "PromptWar – AI Website Creation": {
+    rules: `• Participation is strictly in teams of two.
+• The prompt must be written on the sheet provided by the organizers before entering it into the AI tool.
+• The written prompt and AI-entered prompt must match exactly.
+• Mobile phones and external devices are not permitted for prompt generation.
+• Copied prompts, plagiarism or prompt mismatch will result in disqualification.
+• Teams must complete and submit the website within the allotted time.
+• Only the submitted website will be evaluated.
+• The decision of the judges will be final and binding.`,
+    image: "poster-promptwar.jpg",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSexmnqLr2oSaOI7NUPVEUELtvJ9nWIBZOnQvl-GDaYgRDTjjw/viewform?usp=header"
+  },
 
+  "Poster Making Competition": {
+    rules: `• Participation is strictly individual (Solo).
+• One drawing sheet will be provided by the organizers.
+• Participants must bring their own drawing and colouring materials.
+• Posters must be created only during the competition.
+• The artwork must be original and relevant to the theme.
+• Mobile phones, printed references, or copied artwork are not allowed.
+• No pre-made artwork/designs may be submitted.
+• Participants must submit their poster within the allotted time.
+• The decision of the judges will be final and binding.`,
+    image: "poster-postermaking.jpg",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSexmnqLr2oSaOI7NUPVEUELtvJ9nWIBZOnQvl-GDaYgRDTjjw/viewform?usp=header"
+  },
+
+  "CSS BATTLE": {
+    rules: `• Only HTML and CSS are permitted.
+• JavaScript is strictly prohibited.
+• External CSS frameworks/libraries such as Bootstrap and Tailwind CSS are allowed.
+• Participants must submit all required project files before the deadline.
+• The given reference design must be recreated within the allotted time.
+• Participants must recreate the reference as accurately as possible; closer matches will receive higher marks.
+• Submissions will be checked before evaluation.
+• Judges' decision will be final and binding.`,
+    image: "poster-cssbattle.jpg",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSexmnqLr2oSaOI7NUPVEUELtvJ9nWIBZOnQvl-GDaYgRDTjjw/viewform?usp=header"
+  }
+};
     document.querySelectorAll(".rule-btn").forEach(btn => {
       btn.addEventListener("click", () => {
         const eventName = btn.dataset.event;
