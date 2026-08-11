@@ -50,7 +50,7 @@
       <div class="homeH1">ITSA – Innovate.<span>Connect</span>. Lead.</div>
 
       <p class="homeParagraph">
-        We are the Information Technology Students’ Association (ITSA) – a student-driven community that organizes tech
+        We are the Information Technology Students' Association (ITSA) – a student-driven community that organizes tech
         events, cultural activities, and leadership programs to help students learn, grow, and connect.
       </p>
       <div class="buttons"><button class="homeButton" onClick="location.href='event.html'">Explore Events</button>
@@ -107,43 +107,94 @@
   </section>
 
 
-  <!-- team section -->
-  <div class="teamContainer sections" id="team">
-    <div class="teamHeading">
-      <h2 class="team-title">Meet Our Team</h2>
-      <p class="teamp">Our dedicated team members who make ITSA possible.</p>
+<!-- team section -->
+<div class="teamContainer sections"  id="team">
+<div class="teamHeading">
+    <h2 class="team-title">Meet Our Team</h2>
+    <p class="teamp">Our dedicated team members who make ITSA possible.</p>
+    <button id="meetTeamBtn" class="eventbtn meet-team-btn" onClick="location.href='team.html'">Meet Our Team</button>
+</div>
+
+<!-- Faculty Coordinator (always visible) -->
+<div class="circles faculty-only">
+  <div class="teamCircle">
+    <div class="teamIMG one"><img src="faculty.webp" alt="Faculty"></div>
+    <div class="teamText">
+      <h3 class="teamName">Mrs. Maya Patil</h3>
+      <button class="viewTeam" onClick="location.href='team.html#Faculty'">Faculty Co-ordinator</button>
     </div>
+  </div>
+</div>
 
-    <div class="circles">
+<!-- Explore Team Button -->
+<div class="explore-btn-wrapper">
+  <button id="exploreTeamBtn" class="explore-team-btn" onclick="toggleOtherTeams()">
+    <span id="exploreBtnText">Explore Team ▼</span>
+  </button>
+</div>
 
-      <div class="teamCircle">
-        <div class="teamIMG one"><img src="faculty.webp" alt="Faculty"></div>
-        <div class="teamText">
-          <h3 class="teamName">Mrs. Maya Patil</h3>
-          <button class="viewTeam" onClick="location.href='team.html#Faculty'">Faculty Co-ordinator</button>
-        </div>
-      </div>
+<!-- Other Teams (hidden by default) -->
+<div class="circles other-teams" id="otherTeams" style="display:none; margin-top: 40px;">
 
-      <div class="teamCircle">
-        <div class="teamIMG"><img src="Core.webp" alt="Core Team"></div>
-        <div class="teamText">
-          <h3 class="teamName">Core Team</h3>
-          <button class="viewTeam" onClick="location.href='team.html#Core'">Core Team</button>
-        </div>
-      </div>
-
+  <div class="teamCircle">
+    <div class="teamIMG"><img src="Core.webp" alt="Core Team"></div>
+    <div class="teamText">
+      <h3 class="teamName">Core Team</h3>
+      <button class="viewTeam" onClick="location.href='team.html#Core'">Core Team</button>
     </div>
-
-
-
-    <button id="eventButton" class="eventbtn" onClick="location.href='team.html'">Explore Team</button>
-
-
-
-
   </div>
 
+  <div class="teamCircle">
+    <div class="teamIMG"><img src="Technical.webp" alt="Technical Team"></div>
+    <div class="teamText">
+      <h3 class="teamName">Technical Team</h3>
+      <button class="viewTeam" onClick="location.href='team.html#Technical'">Technical Team</button>
+    </div>
+  </div>
 
+  <div class="teamCircle">
+    <div class="teamIMG"><img src="Media.webp" alt="Media Team"></div>
+    <div class="teamText">
+      <h3 class="teamName">Media Team</h3>
+      <button class="viewTeam" onClick="location.href='team.html#Media'">Media Team</button>
+    </div>
+  </div>
+
+  <div class="teamCircle">
+    <div class="teamIMG"><img src="Design.webp" alt="Design Team"></div>
+    <div class="teamText">
+      <h3 class="teamName">Design Team</h3>
+      <button class="viewTeam" onClick="location.href='team.html#Design'">Design Team</button>
+    </div>
+  </div>
+
+  <div class="teamCircle">
+    <div class="teamIMG"><img src="PR.webp" alt="PR Team"></div>
+    <div class="teamText">
+      <h3 class="teamName">Public Relations Team</h3>
+      <button class="viewTeam" onClick="location.href='team.html#PR'">Public Relation Team</button>
+    </div>
+  </div>
+
+  <div class="teamCircle">
+    <div class="teamIMG"><img src="event (1).webp" alt="Event Team"></div>
+    <div class="teamText">
+      <h3 class="teamName">Event Team</h3>
+      <button class="viewTeam" onClick="location.href='team.html#Event'">Event Team</button>
+    </div>
+  </div>
+
+  <div class="teamCircle">
+    <div class="teamIMG"><img src="Document.webp" alt="Documentation Team"></div>
+    <div class="teamText">
+      <h3 class="teamName">Documentation Team</h3>
+      <button class="viewTeam" onClick="location.href='team.html#Document'">Documentation Team</button>
+    </div>
+  </div>
+
+</div>
+
+</div>
 
 
 

@@ -1,6 +1,28 @@
 
-  // const dropdown = document.querySelector(".dropdown");
-  // const btn = dropdown.querySelector(".dropbtn");
+// Toggle other teams visibility
+function toggleOtherTeams() {
+  const otherTeams = document.getElementById('otherTeams');
+  const btn = document.getElementById('exploreTeamBtn');
+  const btnText = document.getElementById('exploreBtnText');
+
+  const isOpen = otherTeams.style.display !== 'none';
+
+  if (isOpen) {
+    // Hide teams
+    otherTeams.classList.remove('visible');
+    otherTeams.style.display = 'none';
+    btn.classList.remove('open');
+    btnText.textContent = 'Explore Team ▼';
+  } else {
+    // Show teams
+    otherTeams.style.display = 'flex';
+    otherTeams.classList.add('visible');
+    btn.classList.add('open');
+    btnText.textContent = 'Collapse Team ▲';
+  }
+}
+
+
 
   // btn.addEventListener("click", function(e) {
   //   e.preventDefault();

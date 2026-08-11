@@ -548,7 +548,7 @@ span {
 }
 
 .teamHeading {
-  margin-bottom: 100px;
+  margin-bottom: 40px;
 
 }
 
@@ -700,6 +700,65 @@ span {
 }
 
 
+
+/* explore team button */
+.explore-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.explore-team-btn {
+  background: linear-gradient(120deg, #00e1ff, #0077a8);
+  border: none;
+  border-radius: 40px;
+  color: white;
+  padding: 12px 36px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 225, 255, 0.4);
+  letter-spacing: 0.5px;
+}
+
+.explore-team-btn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 30px rgba(0, 225, 255, 0.7);
+  background: linear-gradient(120deg, #0077a8, #00e1ff);
+}
+
+.explore-team-btn.open #exploreBtnText::after {
+  content: '';
+}
+
+/* Meet Our Team button inside heading */
+.meet-team-btn {
+  margin-top: 20px;
+  display: inline-block;
+}
+
+/* Faculty-only layout: centered single circle */
+.faculty-only {
+  justify-content: center;
+}
+
+/* other-teams slide-in animation */
+.other-teams.visible {
+  animation: fadeSlideIn 0.5s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* event section */
 .eventSection {
