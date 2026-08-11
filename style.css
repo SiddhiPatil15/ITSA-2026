@@ -717,25 +717,25 @@ span {
 }
 
 .explore-team-btn {
-  background: #00e1ff;
+  background: #0a4a8a;
   border: none;
   border-radius: 40px;
-  color: #000;
+  color: #ffffff;
   padding: 15px 50px;
   font-size: 1.2rem;
   font-weight: 800;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 225, 255, 0.6), 0 0 0 3px rgba(0,225,255,0.2);
+  box-shadow: 0 4px 20px rgba(10, 74, 138, 0.6), 0 0 0 3px rgba(10,74,138,0.3);
   letter-spacing: 0.5px;
   display: inline-block;
 }
 
 .explore-team-btn:hover {
   transform: scale(1.08);
-  background: #ffffff;
-  color: #000;
-  box-shadow: 0 6px 30px rgba(255, 255, 255, 0.5);
+  background: #0d5eab;
+  color: #fff;
+  box-shadow: 0 6px 30px rgba(10, 74, 138, 0.8);
 }
 
 .explore-team-btn.open #exploreBtnText::after {
