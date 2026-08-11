@@ -548,7 +548,7 @@ span {
 }
 
 .teamHeading {
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 
 }
 
@@ -577,10 +577,9 @@ span {
 
 /* Circle image */
 .teamIMG {
-  height: 180px;
+  height: 230px;
   width: 250px;
   filter: grayscale(100%);
-  /* background-color: yellow; */
   background-size: cover;
   background-position: center;
   transition: all 0.4s ease;
@@ -588,6 +587,7 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: visible;
 
 }
 
@@ -644,6 +644,13 @@ span {
 .teamCircle:hover .teamText {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Faculty coordinator text always visible */
+.faculty-only .teamText {
+  opacity: 1;
+  transform: translateY(0);
+  margin-top: 12px;
 }
 
 /* Text styling */
@@ -705,30 +712,30 @@ span {
 .explore-btn-wrapper {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
-  margin-bottom: 50px;
-  padding-bottom: 10px;
+  margin-top: 50px;
+  margin-bottom: 60px;
 }
 
 .explore-team-btn {
-  background: linear-gradient(120deg, #00e1ff, #0077a8);
+  background: #00e1ff;
   border: none;
   border-radius: 40px;
-  color: white;
-  padding: 14px 44px;
-  font-size: 1.15rem;
-  font-weight: 700;
+  color: #000;
+  padding: 15px 50px;
+  font-size: 1.2rem;
+  font-weight: 800;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 0 25px rgba(0, 225, 255, 0.5);
+  box-shadow: 0 4px 20px rgba(0, 225, 255, 0.6), 0 0 0 3px rgba(0,225,255,0.2);
   letter-spacing: 0.5px;
-  display: block;
+  display: inline-block;
 }
 
 .explore-team-btn:hover {
-  transform: scale(1.07);
-  box-shadow: 0 0 40px rgba(0, 225, 255, 0.8);
-  background: linear-gradient(120deg, #0077a8, #00e1ff);
+  transform: scale(1.08);
+  background: #ffffff;
+  color: #000;
+  box-shadow: 0 6px 30px rgba(255, 255, 255, 0.5);
 }
 
 .explore-team-btn.open #exploreBtnText::after {
